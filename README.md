@@ -15,20 +15,28 @@ You need R, and some packages:
 
 
 #### Basic use
-1. Run `jekyll new MyNewBlog`
-2. Copy  **_source** and **build.R** into the directory created
-3. type `cd MyNewBlog`
-4. type `jekyll build`
-5. type `R` , to open R in terminal.
-6. type `servr::jekyll()`
- - if you get errors, install the required packages
-7. Go to the address mentioned.
+1. Type into your terminal: `jekyll new MyNewBlog`
+  - This sets up a folder containing all the files needed for a blog, written in _markdown_. Radical.
+  - _Tip: Check this works without R by typing:_
+    - `cd MyNewBlog`
+    - `jekyll serve`
+    - Check the webpage generated, it should be nicely styled. Cool? OK, let's do this.
+2. Copy the files from this repo (**_source** and **build.R**) into the __MyNewBlog__ directory created
+3. Navigate to this folder (Type into terminal: `cd MyNewBlog`, if you didn't already).
+4. Type into terminal: `R`
+  - This opens R in the terminal.
+5. Type into terminal: `servr::jekyll()`
+  - This runs the code which will turn **.Rmd** files in *_source_* to **.md** files in *_posts*.
+  - Go to the address mentioned in the output to see the webpage, hosted locally.
 
 
-## How to add a new post:
+## How to add a new .Rmd post:
+
+1. Make a new file in **_source** called **year-month-day-Title.Rmd**
+2. Copy contents of the included Post Template into the new, blank file
+3. Replace title, date, etc (i.e. categories and tags)
 
 
+## Credit:
 
-
- ## Credit:
 THANK YOU Yihui, [Yijui's template](https://github.com/yihui/knitr-jekyll).
