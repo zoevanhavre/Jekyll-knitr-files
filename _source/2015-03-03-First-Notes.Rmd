@@ -1,0 +1,159 @@
+---
+layout: post
+title:  "First Notes"
+categories: [jekyll, rstats]
+tags: [knitr, servr, httpuv, websocket]
+---
+
+#
+
+Here is a nice gif:
+<iframe src="//giphy.com/embed/tc6uGU4GnKGDC" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/blue-purple-hearts-tc6uGU4GnKGDC">via GIPHY</a></p>
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,cache=TRUE)
+
+#knitr::opts_chunk$set(echo=FALSE, fig.path='myproject/plot-', cache=TRUE)
+
+#library(rmarkdown)
+#rmarkdown::render("test.Rmd", "html_document")
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+## YAML
+This is a header that goes at the top of an `.Rmd` file.
+
+```` {r eval=FALSE}
+title: "Post Name"
+date: "`r Sys.Date()`"
+author: "Your Name"
+output:
+    html_document:
+      toc: true
+      theme: cosmo
+      keep_md: true
+````
+
+- `toc= true` tells R to include a table of contents.
+- `theme: cosmo` Valid themes: "cerulean", "journal", "flatly", "readable", "spacelab", "united", and "cosmo".
+- `date` uses R code to insert current date.
+
+
+
+
+
+
+```{r cars}
+summary(cars)
+```
+
+
+# Using Atom as your main editor
+
+I wanted a nice, good looking, all purpose editor and have been using Sublime for a while. Things can be hard in Sublime however, and each time I need to set it up I run into difficulties. In comes Atom, thanks to Github.
+
+> https://atom.io
+
+
+
+config file which we made
+ >"cmd-exec":
+   commands: [
+     {
+       target: [
+         "atom-workspace"
+       ]
+       data:
+         "console:rscript":
+           type: "spawn"
+           useJSTemplateString: true
+           path: "/usr/local/bin/Rscript -e library(rmarkdown);knitr::knit(commandArgs(trailingOnly=TRUE)[1]) ${path.basename(CURRENT_FILE)}"
+           console: true
+     }
+   ]
+
+---------
+
+## To do
+
+
+* `cmd-exec` and making a custom command
+    * `Rscript` command, run a very basic test to check your inputs
+* Make `.r` file holding commands
+    * save on github so it has permanent location, load from html(?)
+    * eventually, make package?
+* Run on save for .Rmd
+    * open html if not open
+
+
+__Explain__
+
+What I am doing
+
+* installed jekyll
+  * type this into terminal `sudo gem install jekyll -n/usr/local/bin`
+    * _Gems will be installed into `/usr/local/bin` and every user on your system can use them if it's in their PATH._
+    * found [here](http://stackoverflow.com/questions/31972968/cant-install-gems-on-os-x-el-capitan)
+    * Error from missing Gems ? install, i.e. to get gem called *jekyll-paginate*:
+    `sudo gem install jekyll-paginate -n/usr/local/bin`
+
+Very helpful blog post [Set up a Jekyll Blog in 5 Minutes ](http://www.sitepoint.com/set-jekyll-blog-5-minutes-poole/)
+
+1. made a new directory called `ZoeDoesDataScience`, and navgated to this (`cd Zoe...`)
+3. type this into iterm
+```` bash
+jekyll serve
+````
+4. in browser type <http://localhost:4000>
+5. error!
+  - Fix by:
+  - `sudo gem install redcarpet`
+  - open `_config.yml` file, add the line
+  > gems: [jekyll-paginate]
+  - comment out line `relative_permalinks: true`
+  - REMOVE line with `gist` in the post (see error)
+  - `sudo gem install pygments.rb`
+  - **NOW IT WORKS** `jekyll serve` !!
+
+Navigate to this page to see how things look
+> http://localhost:4000
+
+
+### Important things
+
+Key concepts  |  what is it
+------------- | -----------------------------
+github        | Think of this as a modern version of google drive, but which does way more
+git           | github depends on git. It appears to be important, but mastery not necessary so far.
+
+
+
+### Programs you want to have
+
+Program       |  what is it
+------------- | -------------
+iTerm         | A nicer terminal than the default Mac terminal
+brew          | A program which installs things for you
+jekyll        | Engine to make nice looking blogs. Github uses Jekyll.
+Atom          | An AWESOME editor. where you mainly work from.
+
+To open __atom__ in current working dirctory: `atom .`
+
+*  Atom packages I installed and how they work
+  * R
+  * Latex
+
+* brew - sick of error messages due to missing dependencies. Go to http://brew.sh
+  * To install it, paste the following into your editor:
+```` bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+````
+* diagram of how things relate
+* diagram of file structure tree and Rmd, html files, templates etc

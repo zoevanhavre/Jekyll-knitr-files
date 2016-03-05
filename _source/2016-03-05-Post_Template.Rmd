@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Basic post with R and maths"
+date: "2016-03-04 00:22:40 +1000"
+categories: [jekyll, rstats]
+tags: [knitr, servr]
+use_math: true
+---
+
+Jekyll is wonderful, and Github pages a gift from the open-source gods, but for a lot of us __Markdown__ isn't quite enough. I wanted to be able to use R code, to make really reproducible reports, etc. f you got hooked on doing this quickly and easily using __Rstudio__, you'll know what I mean.
+This template lets you write posts in __.Rmarkdown__ format, (.Rmd), just like in Rstudio.
+
+
+My motivation for wanting this: I love having a customizable, beautiful interface like __Atom__. I like swiping between clean, full screen applications. I spend a lot of time on the computer, so being able to do this make a huge difference to my day. But thats just me!
+
+I'll talk later (or somewhere else) about adding maths (i.e. greek letters and formulas).
+
+
+Go grab [Yijui's template](https://github.com/yihui/knitr-jekyll).
+
+
+
+Here is a nice gif:
+<iframe src="//giphy.com/embed/tc6uGU4GnKGDC" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/blue-purple-hearts-tc6uGU4GnKGDC">via GIPHY</a></p>
