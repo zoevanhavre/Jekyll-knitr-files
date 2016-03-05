@@ -7,7 +7,10 @@
 This contains the files you need to make a Jekyll blog run R code.
 You need [Jekyll](http://jekyllrb.com) (hint: `gem install jekyll`)
 
-You need R, and some packages *servr* (>= 0.2) and *knitr* (>= 1.8).
+You need R, and some packages:
+
+- *servr* (>= 0.2)
+- *knitr* (>= 1.8).
       - In R type `install.packages(c('servr', 'knitr'), repos = 'http://cran.rstudio.com')`
 
 
@@ -27,5 +30,5 @@ You need R, and some packages *servr* (>= 0.2) and *knitr* (>= 1.8).
 
 
 
- ##Credit:
+ ## Credit:
 THANK YOU Yihui, [Yijui's template](https://github.com/yihui/knitr-jekyll).
