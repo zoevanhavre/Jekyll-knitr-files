@@ -42,9 +42,11 @@ I'll talk later (or somewhere else) about adding maths (i.e. greek letters and f
 
 Hint: add this to *_config.yml*: `mathjax: true`, and add this to files in *_layouts* (not sure which ones, all works for me...)
 
-"<script type="text/javascript"
+```` html
+<script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>"
+</script>
+````
 
 
 ## Credit:
