@@ -7,18 +7,47 @@ tags: [knitr, servr]
 use_math: true
 ---
 
-Jekyll is wonderful, and Github pages a gift from the open-source gods, but for a lot of us __Markdown__ isn't quite enough. I wanted to be able to use R code, to make really reproducible reports, etc. f you got hooked on doing this quickly and easily using __Rstudio__, you'll know what I mean.
+Jekyll is wonderful, and Github pages a gift from the open-source gods, but for a lot of us __Markdown__ isn't quite enough. I wanted to be able to use R code, to make really reproducible reports, etc. If you got hooked on doing this quickly and easily using __Rstudio__, you'll know what I mean.
 This template lets you write posts in __.Rmarkdown__ format, (.Rmd), just like in Rstudio.
 
 
-My motivation for wanting this: I love having a customizable, beautiful interface like __Atom__. I like swiping between clean, full screen applications. I spend a lot of time on the computer, so being able to do this make a huge difference to my day. But thats just me!
-
 I'll talk later (or somewhere else) about adding maths (i.e. greek letters and formulas).
 
+Hint: add this to *_config.yml*: `mathjax: true`, and add this to files in *_layouts* (not sure which ones, works for me...)
 
-Go grab [Yijui's template](https://github.com/yihui/knitr-jekyll).
+````{html eval=FALSE}
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+````
+
+
+## Some R code to test
+
+```{r cars}
+summary(cars)
+```
 
 
 
-Here is a nice gif:
-<iframe src="//giphy.com/embed/tc6uGU4GnKGDC" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/blue-purple-hearts-tc6uGU4GnKGDC">via GIPHY</a></p>
+```{r}
+options(digits = 3)
+cat("hello world!")
+set.seed(123)
+(x = rnorm(40) + 10)
+# generate a table
+knitr::kable(head(mtcars))
+(function() {
+  if (TRUE) 1 + 1  # a boring comment
+})()
+names(formals(servr::jekyll))  # arguments of the jekyll() function
+```
+
+Just to test inline R expressions[^2] in **knitr**, we know the first element in `x` (created in the code chunk above) is `r x[1]`. You can certainly draw some graphs as well:
+
+[^2]: The syntax in R Markdown for inline expressions is `` `r code` ``, where `code` is the R expression that you want to evaluate, e.g. `x[1]`.
+
+```{r cars, fig.height=5, fig.width=7, fig.cap='A scatterplot of the cars data'}
+par(mar = c(4, 4, .1, .1))
+plot(cars, pch = 19, col = 'red')  # a scatterplot
+```

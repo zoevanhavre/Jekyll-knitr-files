@@ -36,6 +36,16 @@ You need R, and some packages:
 2. Copy contents of the included Post Template into the new, blank file
 3. Replace title, date, etc (i.e. categories and tags)
 
+## Maths
+
+I'll talk later (or somewhere else) about adding maths (i.e. greek letters and formulas).
+
+Hint: add this to *_config.yml*: `mathjax: true`, and add this to files in *_layouts* (not sure which ones, all works for me...)
+
+"<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>"
+
 
 ## Credit:
 
