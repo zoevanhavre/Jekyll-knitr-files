@@ -24,7 +24,7 @@ Hint: add this to *_config.yml*: `mathjax: true`, and add this to files in *_lay
 
 ## Some R code to test
 
-```{r cars}
+```{r }
 summary(cars)
 ```
 
